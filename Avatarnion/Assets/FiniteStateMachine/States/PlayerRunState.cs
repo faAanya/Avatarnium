@@ -1,28 +1,29 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-
-public class PlayerRunState : IState
+public class PlayerRunState : State, IState
 {
-    public PlayerController player;
-
-    public PlayerRunState(PlayerController player)
+    public PlayerRunState(PlayerController player) : base(player)
     {
-        this.player = player;
     }
 
     public void Enter()
     {
-        Debug.Log("Move State");
+        Debug.Log("Run State");
     }
     public void Update()
     {
-        //player.transform.position = player.InputHandler.RawMovementInput;
-        // player.RB.velocity = player.InputHandler.InputVector * player.movementSpeed;
+        player.InputHandler.maxSpeed = player.InputHandler.runSpeed;
+        player.InputHandler.Walk();
 
-        // if (player.InputHandler.InputVector == Vector2.zero)
-        // {
-        //     player.StateMachine.ChangeState(player.StateMachine.PlayerIdleState);
-        // }
+        if (player.InputHandler.run.phase == InputActionPhase.Waiting)
+        {
+            player.StateMachine.ChangeState(player.StateMachine.PlayerMoveState);
+        }
+        if (player.InputHandler.move.ReadValue<Vector2>() == Vector2.zero)
+        {
+            player.StateMachine.ChangeState(player.StateMachine.PlayerIdleState);
+        }
     }
     public void Exit()
     {

@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IState
 {
     void Enter();
-    void Update();
+    abstract void Update();
     void Exit();
 }

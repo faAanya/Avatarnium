@@ -8,11 +8,13 @@ public class StateMachine
 
     public PlayerIdleState PlayerIdleState;
     public PlayerMoveState PlayerMoveState;
+    public PlayerRunState PlayerRunState;
 
     public StateMachine(PlayerController player)
     {
         this.PlayerIdleState = new PlayerIdleState(player);
         this.PlayerMoveState = new PlayerMoveState(player);
+        this.PlayerRunState = new PlayerRunState(player);
     }
 
     public void Initialize(IState StartingState)
@@ -29,7 +31,7 @@ public class StateMachine
     }
     public void Update()
     {
-        if(CurrentState != null)
+        if (CurrentState != null)
         {
             CurrentState.Update();
         }

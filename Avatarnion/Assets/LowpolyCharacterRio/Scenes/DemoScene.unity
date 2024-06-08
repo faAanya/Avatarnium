@@ -298,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221773550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13409641, y: -0.68239516, z: 0.48070285, w: 0.5341159}
+  m_LocalRotation: {x: 0.13409638, y: -0.68239516, z: 0.4807028, w: 0.53411597}
   m_LocalPosition: {x: 3.6773388, y: 3.7851667, z: 7.989526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1087,10 +1087,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e32c7b7783087245a9e7fb3d07db125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 1
-  maxSpeed: 3.5
   playerCamera: {fileID: 330585545}
-  InputVector: {x: 0, y: 0}
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 73891dcd-827a-4fa2-9560-cbde113b9f0c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  run:
+    m_Name: Run
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 565269e4-a857-477c-9f40-518cc1703be6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  movementForce: 1
+  walkSpeed: 3.5
+  runSpeed: 5
+  maxSpeed: 3.5
+  forceDirection: {x: 0, y: 0, z: 0}
 --- !u!136 &1714501257
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1166,8 +1186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  movementSpeed: 0
-  score: 0
 --- !u!1 &1854522687
 GameObject:
   m_ObjectHideFlags: 3

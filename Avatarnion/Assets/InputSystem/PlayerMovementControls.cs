@@ -5,31 +5,33 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementControls : MonoBehaviour
 {
+
+    public static PlayerMovementControls Instance;
+
     #region Components
     private PlayerControls playerInput;
     [SerializeField]
     private Camera playerCamera;
+
+    private Rigidbody playerRB;
     #endregion
 
     #region Actions
-    private InputAction move;
-    private InputAction run;
+    public InputAction move;
+    public InputAction run;
     #endregion
-    private Rigidbody playerRB;
+
 
 
     #region Number Variables
 
-    [SerializeField] private float movementForce;
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
-    [SerializeField] private float maxSpeed;
+    public float movementForce;
+    public float walkSpeed;
+    public float runSpeed;
+    public float maxSpeed;
 
-    private Vector3 forceDirection = Vector3.zero;
+    public Vector3 forceDirection = Vector3.zero;
     #endregion
-
-
-
 
     void Awake()
     {
@@ -54,16 +56,6 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (run.phase == InputActionPhase.Performed)
-        {
-            maxSpeed = runSpeed;
-        }
-        else
-        {
-            maxSpeed = walkSpeed;
-        }
-
-        Walk();
 
         LookAt();
     }
@@ -102,6 +94,7 @@ public class PlayerMovementControls : MonoBehaviour
 
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
+
 
         playerRB.AddForce(forceDirection, ForceMode.Impulse);
         forceDirection = Vector3.zero;

@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : IState
+public class PlayerIdleState : State, IState
 {
-    public PlayerController player;
-
-    public PlayerIdleState(PlayerController player)
+    public PlayerIdleState(PlayerController player) : base(player)
     {
-        this.player = player;
     }
 
     public void Enter()
@@ -17,10 +14,10 @@ public class PlayerIdleState : IState
     }
     void IState.Update()
     {
-        // if (player.InputHandler.InputVector != Vector2.zero)
-        // {
-        //     player.StateMachine.ChangeState(player.StateMachine.PlayerMoveState);
-        // }
+        if (player.InputHandler.move.ReadValue<Vector2>() != Vector2.zero)
+        {
+            player.StateMachine.ChangeState(player.StateMachine.PlayerMoveState);
+        }
     }
     public void Exit()
     {

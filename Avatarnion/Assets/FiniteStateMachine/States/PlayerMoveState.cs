@@ -1,13 +1,10 @@
 using UnityEngine;
 
-
-public class PlayerMoveState : IState
+using UnityEngine.InputSystem;
+public class PlayerMoveState : State, IState
 {
-    public PlayerController player;
-
-    public PlayerMoveState(PlayerController player)
+    public PlayerMoveState(PlayerController player) : base(player)
     {
-        this.player = player;
     }
 
     public void Enter()
@@ -16,13 +13,18 @@ public class PlayerMoveState : IState
     }
     public void Update()
     {
-        //player.transform.position = player.InputHandler.RawMovementInput;
-        // player.RB.velocity = player.InputHandler.InputVector * player.movementSpeed;
+        player.InputHandler.maxSpeed = player.InputHandler.walkSpeed;
+        player.InputHandler.Walk();
 
-        // if (player.InputHandler.InputVector == Vector2.zero)
-        // {
-        //     player.StateMachine.ChangeState(player.StateMachine.PlayerIdleState);
-        // }
+        if (player.InputHandler.move.ReadValue<Vector2>() == Vector2.zero)
+        {
+            player.StateMachine.ChangeState(player.StateMachine.PlayerIdleState);
+        }
+        if (player.InputHandler.run.phase == InputActionPhase.Performed)
+        {
+            player.StateMachine.ChangeState(player.StateMachine.PlayerRunState);
+        }
+
     }
     public void Exit()
     {
