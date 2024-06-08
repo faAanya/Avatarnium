@@ -222,8 +222,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1806405, y: 0.014971305, z: -1.2518939}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5.81, y: 5.81, z: 5.81}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221773550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13409635, y: -0.68239516, z: 0.48070288, w: 0.5341159}
+  m_LocalRotation: {x: 0.13409641, y: -0.68239516, z: 0.48070285, w: 0.5341159}
   m_LocalPosition: {x: 3.6773388, y: 3.7851667, z: 7.989526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -544,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
       propertyPath: m_Name
-      value: Rio (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
       propertyPath: m_Enabled
@@ -580,7 +580,7 @@ PrefabInstance:
       addedObject: {fileID: 1714501259}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1714501261}
+      addedObject: {fileID: 1714501263}
   m_SourcePrefab: {fileID: 100100000, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
 --- !u!4 &396592842 stripped
 Transform:
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0
   m_VerticalDamping: 0
-  m_ScreenX: 0.611
+  m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -1087,8 +1087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e32c7b7783087245a9e7fb3d07db125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 0.5
-  maxSpeed: 3
+  movementForce: 1
+  maxSpeed: 3.5
   playerCamera: {fileID: 330585545}
   InputVector: {x: 0, y: 0}
 --- !u!136 &1714501257
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab6151943f5d8144ad0adbabe9b0173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1714501261
+--- !u!114 &1714501263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1162,71 +1162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714501254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: b9618252ac7fe9e4d804385231e2dab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c3b761d09e9e2c64094e5f311d85f2cc, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnMoveInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 048b8ed4-7d1e-4221-98ff-682fd6cd9b5f
-    m_ActionName: 'Player/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5f45f104-fddc-422e-9291-d733e96d69db
-    m_ActionName: 'Player/Dash[/Keyboard/shift]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c3549f52-a6a8-4e0b-ada4-a7f67b53eea6
-    m_ActionName: 'Player/Attack[/Keyboard/i]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f950b6ad-3d75-45ac-a18c-9d973331c73e
-    m_ActionName: 'Player/TrajectoryInput[/Mouse/position]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a6921d43-aba7-4aeb-b22e-06ef1602f9e9
-    m_ActionName: 'Player/PauseMenu[/Keyboard/escape]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a6d64d90-17cd-4fd0-bf46-586efde3a330
-    m_ActionName: 'Player/MinimapOpen[/Keyboard/tab]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bfb2dd01-7ee6-40ad-8461-72f4a31ae0ef
-    m_ActionName: 'Player/Tutorial[/Keyboard/t]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ed67a369-3994-4328-9b3a-9891e131d516
-    m_ActionName: 'MainMenuManager/MoveThroughMenu[/Keyboard/escape]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  health: 0
+  movementSpeed: 0
+  score: 0
 --- !u!1 &1854522687
 GameObject:
   m_ObjectHideFlags: 3
@@ -1520,7 +1461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070941621}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12788951, y: -0.7034974, z: 0.51496595, w: 0.47280636}
+  m_LocalRotation: {x: 0.14378953, y: -0.6735385, z: 0.49303573, w: 0.53158844}
   m_LocalPosition: {x: 3.6773388, y: 3.7851667, z: 7.989526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1534,6 +1475,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 330585546}
   - {fileID: 207209128}
   - {fileID: 396592841}
-  - {fileID: 330585546}

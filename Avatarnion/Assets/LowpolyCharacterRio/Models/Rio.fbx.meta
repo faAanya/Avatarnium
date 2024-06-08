@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 24fc2c3e62c52bf4e9e63fd980b8e85d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273074
+  packageName: LowPoly Survival Character
+  packageVersion: 1.0
+  assetPath: Assets/Unity Technologies/LowpolyCharacterRio/Models/Rio.fbx
+  uploadId: 635505
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -107,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 273074
-  packageName: LowPoly Survival Character
-  packageVersion: 1.0
-  assetPath: Assets/Unity Technologies/LowpolyCharacterRio/Models/Rio.fbx
-  uploadId: 635505
