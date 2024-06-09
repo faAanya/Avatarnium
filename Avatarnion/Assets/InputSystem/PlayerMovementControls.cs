@@ -14,6 +14,8 @@ public class PlayerMovementControls : MonoBehaviour
     private Camera playerCamera;
 
     private Rigidbody playerRB;
+
+    public Animator animator;
     #endregion
 
     #region Actions
@@ -31,12 +33,16 @@ public class PlayerMovementControls : MonoBehaviour
     public float maxSpeed;
 
     public Vector3 forceDirection = Vector3.zero;
+
+
     #endregion
 
     void Awake()
     {
         playerRB = this.GetComponent<Rigidbody>();
         playerInput = new PlayerControls();
+
+        animator = GetComponent<Animator>();
 
     }
 
@@ -49,6 +55,8 @@ public class PlayerMovementControls : MonoBehaviour
         playerInput.Player.Enable();
     }
 
+
+
     void OnDisable()
     {
         playerInput.Player.Disable();
@@ -56,7 +64,15 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (run.phase == InputActionPhase.Performed)
+        {
+            movementForce = runSpeed;
+        }
+        else
+        {
+            movementForce = walkSpeed;
+        }
+        Walk();
         LookAt();
     }
 
@@ -91,7 +107,7 @@ public class PlayerMovementControls : MonoBehaviour
 
     public void Walk()
     {
-
+        forceDirection = new Vector3();
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
@@ -105,6 +121,10 @@ public class PlayerMovementControls : MonoBehaviour
         {
             playerRB.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * playerRB.velocity.y;
         }
+    }
+    private void DoAttack(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("attack");
     }
 
 }

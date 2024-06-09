@@ -55,15 +55,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""c3549f52-a6a8-4e0b-ada4-a7f67b53eea6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""TrajectoryInput"",
                     ""type"": ""Value"",
                     ""id"": ""f950b6ad-3d75-45ac-a18c-9d973331c73e"",
@@ -334,28 +325,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cd3d4fe6-b547-493b-915d-286bf466ff42"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8ecc977a-c6ba-4413-bb44-3ca9faf9b8fa"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""10dd5a68-1edd-42be-8767-0b1ffd96b80c"",
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
@@ -373,6 +342,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Combinations"",
+            ""id"": ""c29940a1-5683-45c7-990c-1bb27283cede"",
+            ""actions"": [
+                {
+                    ""name"": ""Fire1"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbf24ffb-35b4-4fe3-a40c-ba4f6cffc349"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4dee4a70-2b1f-4e71-b435-cdcbd6e712e2"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -458,11 +455,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_TrajectoryInput = m_Player.FindAction("TrajectoryInput", throwIfNotFound: true);
         m_Player_PauseMenu = m_Player.FindAction("PauseMenu", throwIfNotFound: true);
         m_Player_MinimapOpen = m_Player.FindAction("MinimapOpen", throwIfNotFound: true);
         m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
+        // Combinations
+        m_Combinations = asset.FindActionMap("Combinations", throwIfNotFound: true);
+        m_Combinations_Fire1 = m_Combinations.FindAction("Fire1", throwIfNotFound: true);
         // MainMenuManager
         m_MainMenuManager = asset.FindActionMap("MainMenuManager", throwIfNotFound: true);
         m_MainMenuManager_MoveThroughMenu = m_MainMenuManager.FindAction("MoveThroughMenu", throwIfNotFound: true);
@@ -530,7 +529,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_TrajectoryInput;
     private readonly InputAction m_Player_PauseMenu;
     private readonly InputAction m_Player_MinimapOpen;
@@ -542,7 +540,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @TrajectoryInput => m_Wrapper.m_Player_TrajectoryInput;
         public InputAction @PauseMenu => m_Wrapper.m_Player_PauseMenu;
         public InputAction @MinimapOpen => m_Wrapper.m_Player_MinimapOpen;
@@ -565,9 +562,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
             @TrajectoryInput.started += instance.OnTrajectoryInput;
             @TrajectoryInput.performed += instance.OnTrajectoryInput;
             @TrajectoryInput.canceled += instance.OnTrajectoryInput;
@@ -593,9 +587,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
             @TrajectoryInput.started -= instance.OnTrajectoryInput;
             @TrajectoryInput.performed -= instance.OnTrajectoryInput;
             @TrajectoryInput.canceled -= instance.OnTrajectoryInput;
@@ -625,6 +616,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Combinations
+    private readonly InputActionMap m_Combinations;
+    private List<ICombinationsActions> m_CombinationsActionsCallbackInterfaces = new List<ICombinationsActions>();
+    private readonly InputAction m_Combinations_Fire1;
+    public struct CombinationsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CombinationsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Fire1 => m_Wrapper.m_Combinations_Fire1;
+        public InputActionMap Get() { return m_Wrapper.m_Combinations; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CombinationsActions set) { return set.Get(); }
+        public void AddCallbacks(ICombinationsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CombinationsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CombinationsActionsCallbackInterfaces.Add(instance);
+            @Fire1.started += instance.OnFire1;
+            @Fire1.performed += instance.OnFire1;
+            @Fire1.canceled += instance.OnFire1;
+        }
+
+        private void UnregisterCallbacks(ICombinationsActions instance)
+        {
+            @Fire1.started -= instance.OnFire1;
+            @Fire1.performed -= instance.OnFire1;
+            @Fire1.canceled -= instance.OnFire1;
+        }
+
+        public void RemoveCallbacks(ICombinationsActions instance)
+        {
+            if (m_Wrapper.m_CombinationsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICombinationsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CombinationsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CombinationsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CombinationsActions @Combinations => new CombinationsActions(this);
 
     // MainMenuManager
     private readonly InputActionMap m_MainMenuManager;
@@ -703,11 +740,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
         void OnTrajectoryInput(InputAction.CallbackContext context);
         void OnPauseMenu(InputAction.CallbackContext context);
         void OnMinimapOpen(InputAction.CallbackContext context);
         void OnTutorial(InputAction.CallbackContext context);
+    }
+    public interface ICombinationsActions
+    {
+        void OnFire1(InputAction.CallbackContext context);
     }
     public interface IMainMenuManagerActions
     {

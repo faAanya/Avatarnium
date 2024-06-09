@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "c3549f52-a6a8-4e0b-ada4-a7f67b53eea6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "TrajectoryInput",
                     "type": "Value",
                     "id": "f950b6ad-3d75-45ac-a18c-9d973331c73e",
@@ -312,28 +303,6 @@
                 },
                 {
                     "name": "",
-                    "id": "cd3d4fe6-b547-493b-915d-286bf466ff42",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ecc977a-c6ba-4413-bb44-3ca9faf9b8fa",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "10dd5a68-1edd-42be-8767-0b1ffd96b80c",
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
@@ -351,6 +320,34 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Combinations",
+            "id": "c29940a1-5683-45c7-990c-1bb27283cede",
+            "actions": [
+                {
+                    "name": "Fire1",
+                    "type": "Button",
+                    "id": "dbf24ffb-35b4-4fe3-a40c-ba4f6cffc349",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4dee4a70-2b1f-4e71-b435-cdcbd6e712e2",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Fire1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
