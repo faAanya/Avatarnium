@@ -359,17 +359,141 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire2"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a321587-89e9-43d3-9b77-5dbe3f1ca6c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire3"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4e11af1-72f4-489a-a4e8-098c3a7acf61"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire4"",
+                    ""type"": ""Button"",
+                    ""id"": ""5960a9d5-8cf4-4b3c-9599-c33f38182527"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire5"",
+                    ""type"": ""Button"",
+                    ""id"": ""d09c07ca-7293-4b07-bac9-4bd0fffd5cc0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""4dee4a70-2b1f-4e71-b435-cdcbd6e712e2"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""name"": ""Lightening"",
+                    ""id"": ""c90ce216-0e3f-48bd-b97d-5b9e307c69ec"",
+                    ""path"": ""TwoModifiers"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier1"",
+                    ""id"": ""e33b28c5-aaf9-45d0-afa1-e805e4b9f16b"",
+                    ""path"": ""<Keyboard>/period"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""modifier2"",
+                    ""id"": ""399fed05-f66a-4dea-b4da-fa416a60ebf5"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""4fb2a58a-76f7-498f-a223-36efa59c9f30"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24d2e0ea-33d2-496d-8a0f-c5b670cdca4c"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97a7f88f-0e93-4622-b3ef-38d59aa48aa0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa4af81f-dbf2-4306-a6ca-339889a32538"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a04bbd52-318b-47bf-806e-f93467a0ead5"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Fire4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0008a56-5d07-48b9-b5df-4ec8900dbae5"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -462,6 +586,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Combinations
         m_Combinations = asset.FindActionMap("Combinations", throwIfNotFound: true);
         m_Combinations_Fire1 = m_Combinations.FindAction("Fire1", throwIfNotFound: true);
+        m_Combinations_Fire2 = m_Combinations.FindAction("Fire2", throwIfNotFound: true);
+        m_Combinations_Fire3 = m_Combinations.FindAction("Fire3", throwIfNotFound: true);
+        m_Combinations_Fire4 = m_Combinations.FindAction("Fire4", throwIfNotFound: true);
+        m_Combinations_Fire5 = m_Combinations.FindAction("Fire5", throwIfNotFound: true);
         // MainMenuManager
         m_MainMenuManager = asset.FindActionMap("MainMenuManager", throwIfNotFound: true);
         m_MainMenuManager_MoveThroughMenu = m_MainMenuManager.FindAction("MoveThroughMenu", throwIfNotFound: true);
@@ -621,11 +749,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Combinations;
     private List<ICombinationsActions> m_CombinationsActionsCallbackInterfaces = new List<ICombinationsActions>();
     private readonly InputAction m_Combinations_Fire1;
+    private readonly InputAction m_Combinations_Fire2;
+    private readonly InputAction m_Combinations_Fire3;
+    private readonly InputAction m_Combinations_Fire4;
+    private readonly InputAction m_Combinations_Fire5;
     public struct CombinationsActions
     {
         private @PlayerControls m_Wrapper;
         public CombinationsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Fire1 => m_Wrapper.m_Combinations_Fire1;
+        public InputAction @Fire2 => m_Wrapper.m_Combinations_Fire2;
+        public InputAction @Fire3 => m_Wrapper.m_Combinations_Fire3;
+        public InputAction @Fire4 => m_Wrapper.m_Combinations_Fire4;
+        public InputAction @Fire5 => m_Wrapper.m_Combinations_Fire5;
         public InputActionMap Get() { return m_Wrapper.m_Combinations; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -638,6 +774,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Fire1.started += instance.OnFire1;
             @Fire1.performed += instance.OnFire1;
             @Fire1.canceled += instance.OnFire1;
+            @Fire2.started += instance.OnFire2;
+            @Fire2.performed += instance.OnFire2;
+            @Fire2.canceled += instance.OnFire2;
+            @Fire3.started += instance.OnFire3;
+            @Fire3.performed += instance.OnFire3;
+            @Fire3.canceled += instance.OnFire3;
+            @Fire4.started += instance.OnFire4;
+            @Fire4.performed += instance.OnFire4;
+            @Fire4.canceled += instance.OnFire4;
+            @Fire5.started += instance.OnFire5;
+            @Fire5.performed += instance.OnFire5;
+            @Fire5.canceled += instance.OnFire5;
         }
 
         private void UnregisterCallbacks(ICombinationsActions instance)
@@ -645,6 +793,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Fire1.started -= instance.OnFire1;
             @Fire1.performed -= instance.OnFire1;
             @Fire1.canceled -= instance.OnFire1;
+            @Fire2.started -= instance.OnFire2;
+            @Fire2.performed -= instance.OnFire2;
+            @Fire2.canceled -= instance.OnFire2;
+            @Fire3.started -= instance.OnFire3;
+            @Fire3.performed -= instance.OnFire3;
+            @Fire3.canceled -= instance.OnFire3;
+            @Fire4.started -= instance.OnFire4;
+            @Fire4.performed -= instance.OnFire4;
+            @Fire4.canceled -= instance.OnFire4;
+            @Fire5.started -= instance.OnFire5;
+            @Fire5.performed -= instance.OnFire5;
+            @Fire5.canceled -= instance.OnFire5;
         }
 
         public void RemoveCallbacks(ICombinationsActions instance)
@@ -748,6 +908,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface ICombinationsActions
     {
         void OnFire1(InputAction.CallbackContext context);
+        void OnFire2(InputAction.CallbackContext context);
+        void OnFire3(InputAction.CallbackContext context);
+        void OnFire4(InputAction.CallbackContext context);
+        void OnFire5(InputAction.CallbackContext context);
     }
     public interface IMainMenuManagerActions
     {

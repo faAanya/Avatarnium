@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 5360683131785772904}
   - component: {fileID: 5615497917579445399}
   - component: {fileID: 5802310471796282994}
+  - component: {fileID: 8909035680177094528}
   m_Layer: 0
   m_Name: training_dummy
   m_TagString: Enemy
@@ -167,7 +168,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -175,6 +176,33 @@ CapsuleCollider:
   m_Height: 1.6827242
   m_Direction: 1
   m_Center: {x: 0, y: 1.0770503, z: -0.04727602}
+--- !u!54 &8909035680177094528
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697017240656324050}
+  serializedVersion: 4
+  m_Mass: 5
+  m_Drag: 3
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &6774080502169825540
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +246,7 @@ GameObject:
   - component: {fileID: 334251544987690374}
   - component: {fileID: 2476776925156711659}
   m_Layer: 0
-  m_Name: training_dummy
+  m_Name: training_dummy_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 6973413696058740841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.00000011920929, z: -0.000000052154064}
+  m_LocalPosition: {x: 1.2, y: 0.00000011920929, z: -10.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
