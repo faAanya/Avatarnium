@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4526976562776036551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AirShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AirShot
+  Guid:
+    Data1: -15479097
+    Data2: 1076040923
+    Data3: 289772465
+    Data4: 595694454
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1279098117111461730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: "../../../Users/\u041F\u043E\u043B\u0438\u043D\u0430 \u041A\u0438\u0440\u043F\u0438\u0447\u0451\u043D\u043E\u043A/Documents/FMOD
+    Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/SFX.bank"
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638539644303323606
+  FileSizes:
+  - Name: Desktop
+    Value: 297728
+  Exists: 1
+--- !u!114 &-483146630388971077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FireBallShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FireBallShot
+  Guid:
+    Data1: -731759813
+    Data2: 1101404199
+    Data3: 1185063611
+    Data4: 970115280
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1356889088264138129}
+  - {fileID: 7566164729972713464}
+  - {fileID: -1279098117111461730}
+  - {fileID: 4479737058375948025}
+  EditorEvents:
+  - {fileID: 8059202618107088279}
+  - {fileID: 7018692101052271374}
+  - {fileID: -483146630388971077}
+  - {fileID: 6180940746746539813}
+  - {fileID: -4526976562776036551}
+  - {fileID: 2794999880519821481}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 7566164729972713464}
+  StringsBanks:
+  - {fileID: 1356889088264138129}
+  cacheTime: 638539644303323606
+  cacheVersion: 131618
+--- !u!114 &1356889088264138129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: "../../../Users/\u041F\u043E\u043B\u0438\u043D\u0430 \u041A\u0438\u0440\u043F\u0438\u0447\u0451\u043D\u043E\u043A/Documents/FMOD
+    Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/Master.strings.bank"
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638539574248113845
+  FileSizes:
+  - Name: Desktop
+    Value: 1094
+  Exists: 1
+--- !u!114 &2794999880519821481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/MoreFireBallShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/MoreFireBallShot
+  Guid:
+    Data1: 1910320885
+    Data2: 1336117860
+    Data3: -1486698362
+    Data4: -580613174
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4479737058375948025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: "../../../Users/\u041F\u043E\u043B\u0438\u043D\u0430 \u041A\u0438\u0440\u043F\u0438\u0447\u0451\u043D\u043E\u043A/Documents/FMOD
+    Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/Music.bank"
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638539642429806634
+  FileSizes:
+  - Name: Desktop
+    Value: 884608
+  Exists: 1
+--- !u!114 &6180940746746539813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/StoneShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/StoneShot
+  Guid:
+    Data1: -474613834
+    Data2: 1104019215
+    Data3: 951401373
+    Data4: -972986533
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &7018692101052271374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/LighteningShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/LighteningShot
+  Guid:
+    Data1: -1689199560
+    Data2: 1102715715
+    Data3: 1753367210
+    Data4: 1551034848
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2680
+--- !u!114 &7566164729972713464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "../../../Users/\u041F\u043E\u043B\u0438\u043D\u0430 \u041A\u0438\u0440\u043F\u0438\u0447\u0451\u043D\u043E\u043A/Documents/FMOD
+    Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/Master.bank"
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638539574248091442
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &8059202618107088279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  Guid:
+    Data1: -1204984727
+    Data2: 1279818635
+    Data3: 1770482833
+    Data4: 483761566
+  Banks:
+  - {fileID: 4479737058375948025}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 78344
