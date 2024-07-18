@@ -197,6 +197,7 @@ public class BenderClass : MonoBehaviour
             {
                 interactableObject.GetComponent<Rigidbody>().velocity = new Vector3((transform.position.x - interactableObject.transform.position.x), 2f, (transform.position.z - interactableObject.transform.position.z)); ;
             }
+
         }
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
     }

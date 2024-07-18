@@ -10,6 +10,54 @@ public class InteractableObject : MonoBehaviour
 
     public ObjectState objectState = ObjectState.General;
 
+    public float burningSec;
+    public float dryingSec;
+    float tempDruingSpeed;
+
+    public bool emiss = false;
+    public GameObject? emission;
+
+    void Awake()
+    {
+        if (emission != null)
+        {
+            emission.SetActive(emiss);
+        }
+        // if (moving == Moving.Static)
+        // {
+        //     gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+        // }
+        tempDruingSpeed = dryingSec;
+    }
+    void Update()
+    {
+        if (objectState == ObjectState.Burning)
+        {
+            burningSec -= Time.deltaTime;
+
+            if (burningSec <= 0.0f)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (objectState == ObjectState.Wet)
+        {
+            dryingSec -= Time.deltaTime;
+
+            if (dryingSec <= 0.0f)
+            {
+                objectState = ObjectState.General;
+                dryingSec = tempDruingSpeed;
+            }
+        }
+    }
+
+    public void AbsorbWater()
+    {
+
+    }
+
 
 
 }
@@ -26,6 +74,7 @@ public enum ObjectMaterial
     Meltable,
     Teleportable,
     Brokable,
+    Lightable,
     General
 }
 public enum ObjectState

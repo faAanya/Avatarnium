@@ -13,6 +13,8 @@ public class ProjectileScript : MonoBehaviour
             if (effects.Contains(Effect.Fire) && other.GetComponent<InteractableObject>().material.Contains(ObjectMaterial.FireFrigile))
             {
                 other.GetComponent<InteractableObject>().objectState = ObjectState.Burning;
+                other.GetComponent<InteractableObject>().emiss = true;
+                other.GetComponent<InteractableObject>().emission.SetActive(other.GetComponent<InteractableObject>().emiss);
                 Destroy(gameObject);
             }
             if (effects.Contains(Effect.Water))
@@ -38,7 +40,7 @@ public enum Effect
     Break,
     Fire,
     Water,
-    Ice,
+    Freez,
     Push,
     Pull
 }
