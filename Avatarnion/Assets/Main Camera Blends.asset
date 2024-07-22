@@ -25,7 +25,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: Boss Main Camera
-    m_To: Main Camera
+    m_To: Boss Main Camera
     m_Blend:
       m_Style: 0
       m_Time: 2

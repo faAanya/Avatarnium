@@ -9,7 +9,7 @@ public class CinamchineSwitcher : MonoBehaviour
     private bool MainCamera = true;
 
     [SerializeField]
-    private CinemachineVirtualCamera mainCamera, bossCamera;
+    private CinemachineFreeLook mainCamera, bossCamera;
 
     public Collider cameraChangerTrigger;
 

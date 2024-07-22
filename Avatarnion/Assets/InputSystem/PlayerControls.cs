@@ -89,6 +89,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ae0f71aa-979e-419f-bed2-063d150ebe74"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""3492b318-0bde-46d2-803e-30feaf2b1ad8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -344,6 +362,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e0c9595-5f8b-4037-9518-97da4f4cbbfa"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52794cfa-6346-482f-a359-da628a11628f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19b07d07-993b-4671-8dc2-a480358c41f9"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99636452-eeb5-45d8-9e7e-f86bc8416581"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -583,6 +645,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_PauseMenu = m_Player.FindAction("PauseMenu", throwIfNotFound: true);
         m_Player_MinimapOpen = m_Player.FindAction("MinimapOpen", throwIfNotFound: true);
         m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+        m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         // Combinations
         m_Combinations = asset.FindActionMap("Combinations", throwIfNotFound: true);
         m_Combinations_Fire1 = m_Combinations.FindAction("Fire1", throwIfNotFound: true);
@@ -661,6 +725,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PauseMenu;
     private readonly InputAction m_Player_MinimapOpen;
     private readonly InputAction m_Player_Tutorial;
+    private readonly InputAction m_Player_Look;
+    private readonly InputAction m_Player_Aim;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -672,6 +738,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @PauseMenu => m_Wrapper.m_Player_PauseMenu;
         public InputAction @MinimapOpen => m_Wrapper.m_Player_MinimapOpen;
         public InputAction @Tutorial => m_Wrapper.m_Player_Tutorial;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -702,6 +770,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Tutorial.started += instance.OnTutorial;
             @Tutorial.performed += instance.OnTutorial;
             @Tutorial.canceled += instance.OnTutorial;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
+            @Aim.started += instance.OnAim;
+            @Aim.performed += instance.OnAim;
+            @Aim.canceled += instance.OnAim;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -727,6 +801,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Tutorial.started -= instance.OnTutorial;
             @Tutorial.performed -= instance.OnTutorial;
             @Tutorial.canceled -= instance.OnTutorial;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
+            @Aim.started -= instance.OnAim;
+            @Aim.performed -= instance.OnAim;
+            @Aim.canceled -= instance.OnAim;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -904,6 +984,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnPauseMenu(InputAction.CallbackContext context);
         void OnMinimapOpen(InputAction.CallbackContext context);
         void OnTutorial(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
     public interface ICombinationsActions
     {
