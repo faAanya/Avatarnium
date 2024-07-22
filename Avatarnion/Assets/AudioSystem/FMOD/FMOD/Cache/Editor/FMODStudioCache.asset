@@ -43,10 +43,10 @@ MonoBehaviour:
     Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/SFX.bank"
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638539644303323606
+  lastModified: 638572507075597467
   FileSizes:
   - Name: Desktop
-    Value: 297728
+    Value: 310848
   Exists: 1
 --- !u!114 &-483146630388971077
 MonoBehaviour:
@@ -99,12 +99,13 @@ MonoBehaviour:
   - {fileID: 6180940746746539813}
   - {fileID: -4526976562776036551}
   - {fileID: 2794999880519821481}
+  - {fileID: 3524344118274979330}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7566164729972713464}
   StringsBanks:
   - {fileID: 1356889088264138129}
-  cacheTime: 638539644303323606
+  cacheTime: 638572507075597467
   cacheVersion: 131618
 --- !u!114 &1356889088264138129
 MonoBehaviour:
@@ -122,10 +123,10 @@ MonoBehaviour:
     Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/Master.strings.bank"
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638539574248113845
+  lastModified: 638572507074003084
   FileSizes:
   - Name: Desktop
-    Value: 1094
+    Value: 1136
   Exists: 1
 --- !u!114 &2794999880519821481
 MonoBehaviour:
@@ -154,6 +155,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3524344118274979330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ButtonClick
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ButtonClick
+  Guid:
+    Data1: -2134608484
+    Data2: 1222832932
+    Data3: 1061941925
+    Data4: -1212789496
+  Banks:
+  - {fileID: -1279098117111461730}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 756
 --- !u!114 &4479737058375948025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +273,7 @@ MonoBehaviour:
     Studio/fairytale-vally-audio-system-project/audio-system-ftv-project/Build/Desktop/Master.bank"
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638539574248091442
+  lastModified: 638572507073972772
   FileSizes:
   - Name: Desktop
     Value: 1036

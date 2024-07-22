@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Cinemachine;
-using Cinemachine.Editor;
 public class CinamchineSwitcher : MonoBehaviour
 {
 
@@ -15,6 +12,12 @@ public class CinamchineSwitcher : MonoBehaviour
     private CinemachineVirtualCamera mainCamera, bossCamera;
 
     public Collider cameraChangerTrigger;
+
+    void Awake()
+    {
+        bossCamera.GetComponent<Camera>().enabled = !bossCamera.GetComponent<Camera>().enabled;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "BossTrigger")
@@ -27,13 +30,16 @@ public class CinamchineSwitcher : MonoBehaviour
     {
         if (MainCamera)
         {
+            bossCamera.GetComponent<Camera>().enabled = true;
+            mainCamera.GetComponent<Camera>().enabled = false;
             mainCamera.Priority = 0;
             bossCamera.Priority = 1;
-            SwitchMainCamera();
+
         }
         else
         {
-            SwitchMainCamera();
+            bossCamera.GetComponent<Camera>().enabled = false;
+            mainCamera.GetComponent<Camera>().enabled = true;
             mainCamera.Priority = 1;
             bossCamera.Priority = 0;
 
@@ -41,9 +47,9 @@ public class CinamchineSwitcher : MonoBehaviour
         MainCamera = !MainCamera;
     }
 
-    public void SwitchMainCamera()
+    public void SwitchMainCamera(Camera camera)
     {
-        mainCamera.GetComponent<Camera>().enabled = !mainCamera.GetComponent<Camera>().enabled;
+        camera.enabled = !camera.enabled;
     }
 
 }

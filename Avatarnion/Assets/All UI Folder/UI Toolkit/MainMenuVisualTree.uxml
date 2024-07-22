@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/All%20UI%20Folder/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=46cd1997e8b2c144eb7b2e378a9bd2b8&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:Label text="Fairy Tale Valley" name="header" class="header" />
+        <ui:VisualElement name="Buttons" style="flex-grow: 1; justify-content: space-evenly; align-self: auto; align-items: center; padding-top: 130px; -unity-text-align: upper-left; padding-bottom: 150px;">
+            <ui:Button text="Новая игра" name="NewGame" class="button" />
+            <ui:Button text="Настройки" name="Settings" class="button" />
+            <ui:Button text="Выход" name="Exit" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

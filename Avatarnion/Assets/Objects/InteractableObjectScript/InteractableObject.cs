@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour
     float tempDruingSpeed;
 
     public bool emiss = false;
-    public GameObject? emission;
+    public GameObject emission;
 
     void Awake()
     {

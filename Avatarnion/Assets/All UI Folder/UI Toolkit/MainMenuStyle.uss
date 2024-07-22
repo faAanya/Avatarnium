@@ -1,0 +1,19 @@
+.header {
+    font-size: 80px;
+    -unity-font-definition: url('project://database/Assets/All%20UI%20Folder/UI%20Assets/Fonts/our-font.ttf?fileID=12800000&guid=67c66131c126e8b4a94950b43b9ce290&type=3#our-font');
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    -unity-text-align: upper-center;
+    margin-top: 20px;
+}
+
+.button {
+    font-size: 80px;
+    width: 600px;
+    height: 100px;
+    background-image: url('project://database/Assets/All%20UI%20Folder/UI%20Assets/%D0%BF%D1%83%D1%81%D1%82%D0%B0%D1%8F%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BE%D1%87%D0%BA%D0%B0.png?fileID=2800000&guid=f25c402a1fe27c14eae63349551f79a6&type=3#пустая кнопочка');
+    background-color: rgba(0, 0, 0, 0);
+    -unity-font-definition: url('project://database/Assets/All%20UI%20Folder/UI%20Assets/Fonts/our-font.ttf?fileID=12800000&guid=67c66131c126e8b4a94950b43b9ce290&type=3#our-font');
+    margin-top: 0;
+    margin-left: 0;
+}
