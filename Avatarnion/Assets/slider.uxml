@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Slider value="2" high-value="100" direction="Horizontal" inverted="false" focusable="false" class="slider unity-dragger" style="display: flex; opacity: 1;" />
+</ui:UXML>

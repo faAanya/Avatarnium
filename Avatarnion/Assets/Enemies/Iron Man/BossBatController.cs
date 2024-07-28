@@ -29,13 +29,14 @@ public class BossBatController : MonoBehaviour
         Vector3 Look = new Vector3(0, gameObject.transform.position.x - player.GetComponent<Transform>().position.x, gameObject.transform.position.z - player.GetComponent<Transform>().position.z);
 
         float angle = Mathf.Atan2(Look.z, -Look.y) * Mathf.Rad2Deg;
-        Debug.Log(angle);
         rndKeeper = angle;
     }
 
 
+
     void Update()
     {
+
         if (transform.rotation != Quaternion.Euler(0, 90, 60) && attackCoolDown > 0)
         {
             Quaternion target = Quaternion.Euler(0, 90, 60);

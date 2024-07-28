@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.Android;
 using UnityEngine.UIElements;
 
 public class MainMenuEvents : MonoBehaviour
@@ -8,6 +7,7 @@ public class MainMenuEvents : MonoBehaviour
     private UIDocument _UIdocumnet;
     private Button _button;
 
+    private Slider _playerHealthSlider;
     int i = 0;
     private List<Button> _menuButtons = new List<Button>();
     void Awake()
@@ -15,6 +15,7 @@ public class MainMenuEvents : MonoBehaviour
         _UIdocumnet = GetComponent<UIDocument>();
         _button = _UIdocumnet.rootVisualElement.Q("NewGame") as Button;
         _button.RegisterCallback<ClickEvent>(OnNewGameClickEvent);
+
 
         _menuButtons = _UIdocumnet.rootVisualElement.Query<Button>().ToList();
 

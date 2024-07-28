@@ -38,7 +38,8 @@ public class BenderClass : MonoBehaviour
     [Header("Attack5 - Air Attack")]
     public InputAction attack5;
 
-
+    [Header("Attack6 - Health Increase Buffer")]
+    public float healthBuffer;
     public GameObject[] projectiles;
 
     private InteractableObject interactableObject;
@@ -56,7 +57,7 @@ public class BenderClass : MonoBehaviour
     public virtual void OnEnable()
     {
         attack1 = playerInput.Combinations.Fire1;
-        attack1.performed += SpawnProjectile;
+        attack1.performed += OnIncreasePlayerHealth;
 
         attack2 = playerInput.Combinations.Fire2;
         attack2.performed += SpawnSurrond;
@@ -76,7 +77,7 @@ public class BenderClass : MonoBehaviour
 
     void OnDisable()
     {
-        attack1.performed -= SpawnProjectile;
+        attack1.performed -= OnIncreasePlayerHealth;
         attack2.performed -= SpawnSurrond;
         attack3.performed -= FindClosestInteractableObjects;
         attack4.performed -= ShooterUp;
@@ -202,7 +203,10 @@ public class BenderClass : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
     }
 
-
+    public void OnIncreasePlayerHealth(InputAction.CallbackContext context)
+    {
+        PlayerHealthController.OnHealthChange.Invoke(healthBuffer);
+    }
 
 }
 

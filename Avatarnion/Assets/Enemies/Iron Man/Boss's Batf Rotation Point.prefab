@@ -137,7 +137,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -79.04, y: 31.5, z: 183}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.109149724, y: 0.013396567, z: 0.03034342}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7630999825845653403}
@@ -228,4 +228,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266d925b0679969418b62b29ecd70a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCoolDown: 5
+  smooth: 5
+  attackCoolDown: 1
