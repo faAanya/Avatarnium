@@ -25,7 +25,6 @@ public class PlayerHealthController : MonoBehaviour
     void OnDisable()
     {
         OnHealthChange -= ChangeHealth;
-
     }
 
     void Start()
@@ -42,13 +41,11 @@ public class PlayerHealthController : MonoBehaviour
     }
     void Die()
     {
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void ChangeHealth(float buffer)
     {
         playerHealth += buffer;
-        Debug.Log(buffer);
         playerHealthSlider.value = playerHealth;
     }
 }

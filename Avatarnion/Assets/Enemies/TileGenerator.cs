@@ -141,30 +141,68 @@ public class DoublyLinkedList<T> : IEnumerable<T>
 public class TileGenerator : MonoBehaviour
 {
 
-    GameObject tile;
+    [SerializeField]
+    GameObject saveTile, killingTile;
+    GameObject[] tiles;
 
     void Awake()
     {
-        DoublyLinkedList<Dictionary<bool, Vector3>> tilesPos = new DoublyLinkedList<Dictionary<bool, Vector3>>();
-        for (int i = 0; i < 5; i++)
-        {
-            tilesPos.Add(new Dictionary<bool, Vector3>() { { false, new Vector3(i * 20f, 0, 0) } });
-        }
-        System.Random random = new System.Random();
 
-        // foreach
-        // List<bool> keys = new List<string>(tilesPos.Keys);
-        // string randomKey = keys[rnd.Next(keys.Count)];
-        // Console.WriteLine($"The capital of {randomKey} is {capitals[randomKey]}");
-
-        // GameObject firstTile = Instantiate(tile, )
+        tiles = new GameObject[4];
+        StartCoroutine("GenerateTile");
     }
 
-    void GenerateTile()
+    IEnumerator GenerateTile()
     {
         System.Random random = new System.Random();
+        int randomPos = random.Next(0, 4);
+        // for (int i = 0; i < tiles.Length; i++)
+        // {
+        //     Vector3 pos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + i * 5);
+        //     if (i == randomPos)
+        //     {
+        //         GameObject newTile = Instantiate(saveTile, pos, Quaternion.identity);
+        //     }
+        //     else
+        //     {
+        //         GameObject newTile = Instantiate(killingTile, pos, Quaternion.identity);
 
+        //     }
+        // }
+        Debug.Log(randomPos);
+        for (int i = 0; i < 20; i++)
+        {
+            if (randomPos == 0)
+            {
+                randomPos++;
+            }
+            else if (randomPos == 3)
+            {
+                randomPos--;
+            }
+            else
+            {
+                randomPos += random.Next(-1, 2);
+            }
+            Debug.Log($"New {randomPos}");
+            for (int j = 0; j < 4; j++)
+            {
+                Debug.Log(randomPos);
 
+                Vector3 pos = new Vector3(gameObject.transform.position.x - i * 5, gameObject.transform.position.y, gameObject.transform.position.z + j * 5);
+                if (j == randomPos)
+                {
+                    GameObject newTile = Instantiate(saveTile, pos, Quaternion.identity);
+                }
+                else
+                {
+                    GameObject newTile = Instantiate(killingTile, pos, Quaternion.identity);
+
+                }
+                yield return new WaitForSeconds(.5f);
+            }
+            yield return new WaitForSeconds(1f);
+        }
 
     }
 }
