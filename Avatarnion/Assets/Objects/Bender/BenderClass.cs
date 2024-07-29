@@ -44,7 +44,7 @@ public class BenderClass : MonoBehaviour
 
     private InteractableObject interactableObject;
 
-
+    [SerializeField] private Transform spawnBulletPosition;
 
     void Awake()
     {
@@ -54,39 +54,39 @@ public class BenderClass : MonoBehaviour
         animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
-    public virtual void OnEnable()
-    {
-        attack1 = playerInput.Combinations.Fire1;
-        attack1.performed += OnIncreasePlayerHealth;
+    // public virtual void OnEnable()
+    // {
+    //     attack1 = playerInput.Combinations.Fire1;
+    //     attack1.performed += OnIncreasePlayerHealth;
 
-        attack2 = playerInput.Combinations.Fire2;
-        attack2.performed += SpawnSurrond;
+    //     attack2 = playerInput.Combinations.Fire2;
+    //     attack2.performed += SpawnSurrond;
 
-        attack3 = playerInput.Combinations.Fire3;
-        attack3.performed += FindClosestInteractableObjects;
+    //     attack3 = playerInput.Combinations.Fire3;
+    //     attack3.performed += FindClosestInteractableObjects;
 
-        attack4 = playerInput.Combinations.Fire4;
-        attack4.performed += ShooterUp;
+    //     attack4 = playerInput.Combinations.Fire4;
+    //     attack4.performed += ShooterUp;
 
-        attack5 = playerInput.Combinations.Fire5;
-        attack5.performed += Push;
+    //     attack5 = playerInput.Combinations.Fire5;
+    //     attack5.performed += Push;
 
-        playerInput.Combinations.Enable();
-    }
-
-
-    void OnDisable()
-    {
-        attack1.performed -= OnIncreasePlayerHealth;
-        attack2.performed -= SpawnSurrond;
-        attack3.performed -= FindClosestInteractableObjects;
-        attack4.performed -= ShooterUp;
-        attack5.performed -= Push;
+    //     playerInput.Combinations.Enable();
+    // }
 
 
+    // void OnDisable()
+    // {
+    //     attack1.performed -= OnIncreasePlayerHealth;
+    //     attack2.performed -= SpawnSurrond;
+    //     attack3.performed -= FindClosestInteractableObjects;
+    //     attack4.performed -= ShooterUp;
+    //     attack5.performed -= Push;
 
-        playerInput.Combinations.Disable();
-    }
+
+
+    //     playerInput.Combinations.Disable();
+    // }
 
     [System.Obsolete]
     InteractableObject FindClosestInteractableObject() //looks for closest interactableObject
@@ -107,10 +107,11 @@ public class BenderClass : MonoBehaviour
         return closestinteractableObject;
 
     }
-    public void SpawnProjectile(InputAction.CallbackContext context) //Shooting to closest interactableObject
+    public void SpawnProjectile(Vector3 mouseWorldPosition) //Shooting to closest interactableObject
     {
-        interactableObject = FindClosestInteractableObject();
-        GameObject newProjectile = Instantiate(fireBall, gameObject.transform.position, Quaternion.identity);
+        // interactableObject = FindClosestInteractableObject();
+        Vector3 aimDir = (mouseWorldPosition - gameObject.transform.position).normalized;
+        GameObject newProjectile = Instantiate(fireBall, gameObject.transform.position, Quaternion.LookRotation(aimDir, Vector3.up));
         newProjectile.GetComponent<Rigidbody>().velocity = (interactableObject.transform.position + interactableObject.GetComponent<Collider>().bounds.size / 2 - gameObject.transform.position) * 15f;
 
 
@@ -118,7 +119,7 @@ public class BenderClass : MonoBehaviour
     }
 
 
-    public void SpawnSurrond(InputAction.CallbackContext context)
+    public void SpawnSurrond()
     {
         StartCoroutine(Surround());
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.stoneShot, transform.position);
@@ -146,7 +147,7 @@ public class BenderClass : MonoBehaviour
 
     }
 
-    void FindClosestInteractableObjects(InputAction.CallbackContext context) //Lightening 
+    void FindClosestInteractableObjects() //Lightening 
     {
         IEnumerable<InteractableObject> allEnemies = FindObjectsOfType<MonoBehaviour>().OfType<InteractableObject>();
         allEnemies.ToList();
@@ -162,7 +163,7 @@ public class BenderClass : MonoBehaviour
     }
 
 
-    private void ShooterUp(InputAction.CallbackContext context) //Barley attack up
+    private void ShooterUp() //Barley attack up
     {
         System.Random random = new System.Random();
         for (int i = 0; i < fireBallsCount; i++)
@@ -174,7 +175,7 @@ public class BenderClass : MonoBehaviour
 
     }
 
-    private void Push(InputAction.CallbackContext context)//Pushes enemies back
+    private void Push()//Pushes enemies back
     {
 
         IEnumerable<InteractableObject> allEnemies = FindObjectsOfType<MonoBehaviour>().OfType<InteractableObject>();
@@ -189,7 +190,7 @@ public class BenderClass : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
     }
 
-    private void Pull(InputAction.CallbackContext context)//Pushes enemies back
+    private void Pull()//Pushes enemies back
     {
         IEnumerable<InteractableObject> allEnemies = FindObjectsOfType<MonoBehaviour>().OfType<InteractableObject>();
         foreach (InteractableObject interactableObject in allEnemies)
@@ -203,7 +204,7 @@ public class BenderClass : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
     }
 
-    public void OnIncreasePlayerHealth(InputAction.CallbackContext context)
+    public void OnIncreasePlayerHealth()
     {
         PlayerHealthController.OnHealthChange.Invoke(healthBuffer);
     }

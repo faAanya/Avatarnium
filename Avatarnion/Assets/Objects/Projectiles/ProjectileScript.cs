@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
@@ -26,7 +27,11 @@ public class ProjectileScript : MonoBehaviour
 
     }
 
-
+    void Start()
+    {
+        float speed = 100f;
+        gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+    }
     void Update()
     {
         if (transform.position.y < GameObject.FindGameObjectWithTag("Ground").transform.position.y - 2f)

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 
-public class BossBatController : MonoBehaviour
+public class BossBatController : EnemyClass
 {
     bool isReady = true, isHitting = false;
 
@@ -14,14 +14,9 @@ public class BossBatController : MonoBehaviour
     float attackCoolDown = 1;
     float rndKeeper;
 
-
-    //System.Random rand = new System.Random();
-
-    GameObject player;
-
-    void Awake()
+    public override void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        base.Awake();
         FindPlayerPosition();
     }
     void FindPlayerPosition()
