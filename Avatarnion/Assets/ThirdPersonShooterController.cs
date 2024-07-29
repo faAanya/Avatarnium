@@ -23,11 +23,15 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     [SerializeField]
     private Transform spawnPosition;
+
+    private Animator animator;
+    public float healthBuffer;
     void Awake()
     {
         benderClass = GetComponent<BenderClass>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,6 +49,8 @@ public class ThirdPersonShooterController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetRotateOnMove(false);
 
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
+
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
@@ -55,6 +61,9 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetRotateOnMove(true);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+
+
         }
 
         if (starterAssetsInputs.fire1)
@@ -65,5 +74,39 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             starterAssetsInputs.fire1 = false;
         }
+        if (starterAssetsInputs.fire2)
+        {
+            IEnumerable<InteractableObject> allEnemies = FindObjectsOfType<InteractableObject>();
+            foreach (InteractableObject interactableObject in allEnemies)
+            {
+
+                if (interactableObject.moving == Moving.Dynamic)
+                {
+                    interactableObject.GetComponent<Rigidbody>().velocity = new Vector3((interactableObject.transform.position.x - transform.position.x), 2f, (interactableObject.transform.position.z - transform.position.z)); ;
+                }
+            }
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
+            starterAssetsInputs.fire2 = false;
+        }
+        if (starterAssetsInputs.fire3)
+        {
+            IEnumerable<InteractableObject> allEnemies = FindObjectsOfType<InteractableObject>();
+            foreach (InteractableObject interactableObject in allEnemies)
+            {
+                if (interactableObject.moving == Moving.Dynamic)
+                {
+                    interactableObject.GetComponent<Rigidbody>().velocity = new Vector3((transform.position.x - interactableObject.transform.position.x), 2f, (transform.position.z - interactableObject.transform.position.z)); ;
+                }
+
+            }
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.airShot, transform.position);
+            starterAssetsInputs.fire3 = false;
+        }
+        if (starterAssetsInputs.fire4)
+        {
+            PlayerHealthController.OnHealthChange.Invoke(healthBuffer);
+            starterAssetsInputs.fire4 = false;
+        }
+
     }
 }
