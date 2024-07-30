@@ -7,7 +7,7 @@ public class ProjectileScript : MonoBehaviour
 {
 
     public List<Effect> effects;
-    void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<InteractableObject>() != null)
         {
@@ -27,12 +27,12 @@ public class ProjectileScript : MonoBehaviour
 
     }
 
-    void Start()
+    public virtual void Start()
     {
         float speed = 100f;
         gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
     }
-    void Update()
+    public virtual void Update()
     {
         if (transform.position.y < GameObject.FindGameObjectWithTag("Ground").transform.position.y - 2f)
         {
