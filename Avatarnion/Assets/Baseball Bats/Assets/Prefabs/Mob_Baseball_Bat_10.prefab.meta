@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6606d3dcc5264a44eb71cb2324879c2d
+timeCreated: 1508916792
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102171
+  packageName: "Baseball Bats \u2013 Pack"
+  packageVersion: 1.1
+  assetPath: Assets/Baseball Bats/Assets/Prefabs/Mob_Baseball_Bat_10.prefab
+  uploadId: 208247

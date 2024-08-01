@@ -250,8 +250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297206418258486562}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09821774, y: -0.042501144, z: 0.005136987, w: 0.99424374}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.098284945, y: -0.021439468, z: 0.002591325, w: 0.994924}
+  m_LocalPosition: {x: -10.684548, y: 22.898071, z: 246.76552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -938,8 +938,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020821176343325057}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1162386, y: -0.042400952, z: 0.005907173, w: 0.9922983}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.116318144, y: -0.021388916, z: 0.0029798395, w: 0.99297726}
+  m_LocalPosition: {x: -10.684548, y: 22.898071, z: 246.76552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2935,8 +2935,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2509537903974123680}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13426876, y: -0.042286474, z: 0.0066774455, w: 0.9900198}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.13436064, y: -0.021331161, z: 0.0033683975, w: 0.9906972}
+  m_LocalPosition: {x: -10.684548, y: 22.898071, z: 246.76552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5333,7 +5333,7 @@ MonoBehaviour:
     m_Bits: 1
   CinemachineCameraTarget: {fileID: 8338988566280778634}
   TopClamp: 70
-  BottomClamp: -30
+  BottomClamp: -70
   CameraAngleOverride: 0
   LockCameraPosition: 0
 --- !u!114 &5885216827943657505
@@ -5492,10 +5492,10 @@ MonoBehaviour:
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  debugTransform: {fileID: 0}
-  benderClass: {fileID: 19552110625266057}
-  fireBall: {fileID: 2128200812812964011, guid: 7b7ba174c2dc9cb4fb4df0c19a0cb7dd, type: 3}
+  simpleGO: {fileID: 2128200812812964011, guid: 7b7ba174c2dc9cb4fb4df0c19a0cb7dd, type: 3}
+  explosiveGO: {fileID: 2128200812812964011, guid: 0bd00b40e0876ab4f8db8e7b9c8e6e68, type: 3}
   spawnPosition: {fileID: 5806274161136984363}
+  healthBuffer: 15
 --- !u!114 &3450314815799759657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5509,6 +5509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
+  healthBuffer: 0
   playerHealthSlider: {fileID: 5802915259489966563}
 --- !u!1 &4447222496490638647
 GameObject:

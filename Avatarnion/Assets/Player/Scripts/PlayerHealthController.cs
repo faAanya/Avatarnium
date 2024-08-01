@@ -9,9 +9,9 @@ public class PlayerHealthController : MonoBehaviour
     public static Action<float> OnHealthChange;
 
 
-
     [Header("Player health characteristics")]
     public float playerHealth;
+    public float healthBuffer;
 
     [Header("UI variables")]
     [SerializeField]

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2c2eaa77adbe704690e52a50768f2a8
+timeCreated: 1507144548
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102171
+  packageName: "Baseball Bats \u2013 Pack"
+  packageVersion: 1.1
+  assetPath: Assets/Baseball Bats/Assets/Prefabs/PC_Baseball_Bat_12.prefab
+  uploadId: 208247
