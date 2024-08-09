@@ -21,6 +21,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     public GameObject simpleGO;
     public GameObject explosiveGO;
 
+    public Light myLight;
+
     [SerializeField]
     private Transform spawnPosition;
 
@@ -54,14 +56,14 @@ public class ThirdPersonShooterController : MonoBehaviour
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+
+
         }
         else
         {
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-
-
         }
 
         if (starterAssetsInputs.fire1)
@@ -113,5 +115,10 @@ public class ThirdPersonShooterController : MonoBehaviour
             starterAssetsInputs.fire5 = false;
         }
 
+        if (starterAssetsInputs.isLight)
+        {
+            myLight.enabled = !myLight.enabled;
+            starterAssetsInputs.isLight = false;
+        }
     }
 }

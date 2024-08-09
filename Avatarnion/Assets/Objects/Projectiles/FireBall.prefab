@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8067274308922400953}
   - component: {fileID: 3266906202897553757}
   - component: {fileID: 6980793888188407655}
+  - component: {fileID: -1734372376361752517}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c12f770044f2345af14351c0477a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: 
+  effects: 01000000
 --- !u!96 &7032966096247342569
 TrailRenderer:
   serializedVersion: 3
@@ -5128,3 +5129,26 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-1734372376361752517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128200812812964011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0

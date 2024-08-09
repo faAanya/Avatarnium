@@ -30,6 +30,23 @@ public class InteractableObject : MonoBehaviour
         // }
         tempDruingSpeed = dryingSec;
     }
+
+    public virtual void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<InteractableObject>() != null)
+        {
+
+
+            if (other.GetComponent<InteractableObject>().objectState == ObjectState.Burning && gameObject.GetComponent<InteractableObject>().material.Contains(ObjectMaterial.FireFrigile))
+            {
+                Debug.Log("Fire!");
+                gameObject.GetComponent<InteractableObject>().objectState = ObjectState.Burning;
+
+            }
+        }
+
+    }
+
     void Update()
     {
         if (objectState == ObjectState.Burning)

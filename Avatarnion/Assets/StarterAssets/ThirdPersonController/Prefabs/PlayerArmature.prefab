@@ -5370,6 +5370,7 @@ MonoBehaviour:
   fire3: 0
   fire4: 0
   fire5: 0
+  isLight: 0
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
   jump: 0
@@ -5494,6 +5495,7 @@ MonoBehaviour:
     m_Bits: 1
   simpleGO: {fileID: 2128200812812964011, guid: 7b7ba174c2dc9cb4fb4df0c19a0cb7dd, type: 3}
   explosiveGO: {fileID: 2128200812812964011, guid: 0bd00b40e0876ab4f8db8e7b9c8e6e68, type: 3}
+  myLight: {fileID: 0}
   spawnPosition: {fileID: 5806274161136984363}
   healthBuffer: 15
 --- !u!114 &3450314815799759657
@@ -7140,7 +7142,6 @@ Transform:
   - {fileID: 4838639998126262694}
   - {fileID: 8483373341028894003}
   - {fileID: 2168484869866396794}
-  - {fileID: 5387313281452573496}
   - {fileID: 8947801230278290781}
   m_Father: {fileID: 8002264680419333305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10221,6 +10222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5387313281452573496}
   - component: {fileID: 4901713969187033837}
+  - component: {fileID: 2517050752843166435}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -10236,12 +10238,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8321152832287457200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.70705867, y: -0, z: -0, w: 0.7071549}
-  m_LocalPosition: {x: 0, y: 2.67, z: 0}
+  m_LocalRotation: {x: 0.69902176, y: -0.019833349, z: 0.020268116, w: 0.714538}
+  m_LocalPosition: {x: -0.056692626, y: -0.35313082, z: 1.0063347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7613435579496526523}
+  m_Father: {fileID: 8338988566280778637}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &4901713969187033837
 Light:
@@ -10304,6 +10306,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2517050752843166435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321152832287457200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &8338988566280778634
 GameObject:
   m_ObjectHideFlags: 0
@@ -10332,7 +10357,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5387313281452573496}
   m_Father: {fileID: 3893294197879345259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8345528668818648182

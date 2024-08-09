@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 477cc4148fad3449482a3bc3178594e2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 238323
+  packageName: Stylized Medieval Inn Pack
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Inn/Scenes/SampleSceneLightingSettings.lighting
+  uploadId: 542263

@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool fire3;
 		public bool fire4;
 		public bool fire5;
+		public bool isLight;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -50,40 +51,14 @@ namespace StarterAssets
 		public void OnAim(InputValue value)
 		{
 			AimInput(value.isPressed);
+
+
 		}
 
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
-#endif
-
-
-		public void MoveInput(Vector2 newMoveDirection)
-		{
-			move = newMoveDirection;
-		}
-
-		public void LookInput(Vector2 newLookDirection)
-		{
-			look = newLookDirection;
-		}
-
-		public void JumpInput(bool newJumpState)
-		{
-			jump = newJumpState;
-		}
-		public void AimInput(bool newAimState)
-		{
-			aim = newAimState;
-		}
-
-
-		public void SprintInput(bool newSprintState)
-		{
-			sprint = newSprintState;
-		}
-
 		#region Combat
 		public void OnFire1(InputValue value)
 		{
@@ -134,7 +109,45 @@ namespace StarterAssets
 		{
 			fire5 = isPressed;
 		}
+		public void LightInput(bool newLightState)
+		{
+			isLight = newLightState;
+		}
+		public void OnLight(InputValue value)
+		{
+			LightInput(value.isPressed);
+		}
 		#endregion
+
+#endif
+
+
+		public void MoveInput(Vector2 newMoveDirection)
+		{
+			move = newMoveDirection;
+		}
+
+		public void LookInput(Vector2 newLookDirection)
+		{
+			look = newLookDirection;
+		}
+
+		public void JumpInput(bool newJumpState)
+		{
+			jump = newJumpState;
+		}
+		public void AimInput(bool newAimState)
+		{
+			aim = newAimState;
+		}
+
+
+
+		public void SprintInput(bool newSprintState)
+		{
+			sprint = newSprintState;
+		}
+
 
 		private void OnApplicationFocus(bool hasFocus)
 		{

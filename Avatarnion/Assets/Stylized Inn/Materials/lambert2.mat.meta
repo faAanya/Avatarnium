@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dd75d46beb968ea46904ed9805b44acc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 238323
+  packageName: Stylized Medieval Inn Pack
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Inn/Materials/lambert2.mat
+  uploadId: 542263
